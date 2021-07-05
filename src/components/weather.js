@@ -2,6 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import SideBar from './sidebar/sidebar'
+import MainBar from './mainbar/mainbar'
 import './weather.css'
 
 function weather() {
@@ -11,8 +12,8 @@ function weather() {
               <div className="col-md-4 sidebar ">
               <SideBar/>
               </div>
-              <div className="col-md-8 ">
-                  Hi
+              <div className="col-md-8 mainbar ">
+                <MainBar/>
               </div>
             
           </div>
