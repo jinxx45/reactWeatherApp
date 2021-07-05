@@ -1,7 +1,12 @@
+import Weather from './components/weather'
+
+import 'weather-icons/css/weather-icons.css'
+
 function App() {
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <Weather/>
+      
     </div>
   );
 }
