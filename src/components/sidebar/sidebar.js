@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { faCloudRain } from '@fortawesome/free-solid-svg-icons'
 
-function sidebar() {
+function sidebar(props) {
     return (
         <div>
             {/* Search Bar */}
@@ -20,11 +20,11 @@ function sidebar() {
 
             {/* Degree  */}
 
-            <h1 className="mx-4">12&deg;C </h1>
+            <h1 className="mx-4">{props.celcius}&deg;C </h1>
 
             {/* Day and Time */}
 
-            <h2 className="mx-4 my-4">Monday <span>16:00</span> </h2>
+            <h2 className="mx-4 my-4">{props.day} <span>{props.time}</span> </h2>
 
             {/* Others */}
 
@@ -41,7 +41,7 @@ function sidebar() {
 
             {/* Location */}
 
-            <h3 className="mx-3 my-3"> Puducherry , India </h3>
+            <h3 className="mx-3 my-3">  {props.city} , {props.country} </h3>
 
             
             

@@ -5,12 +5,18 @@ import SideBar from './sidebar/sidebar'
 import MainBar from './mainbar/mainbar'
 import './weather.css'
 
-function weather() {
+function weather(props) {
     return (
       <div className="mx-3 my-3" >
           <div className="row">
               <div className="col-md-4 sidebar ">
-              <SideBar/>
+              <SideBar 
+              city = {props.city} 
+              country = {props.country}
+              celcius = {props.celcius}
+              day = {props.day}
+              time = {props.time}
+              />
               </div>
               <div className="col-md-8 mainbar ">
                 <MainBar/>
