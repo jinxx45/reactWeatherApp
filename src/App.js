@@ -2,7 +2,10 @@ import Weather from './components/weather'
 
 import React, { Component } from 'react'
 
+import moment from 'moment';
+
 import 'weather-icons/css/weather-icons.css'
+
 
 //api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 
@@ -23,6 +26,11 @@ export default class App extends Component {
       maxTemp : undefined,
       day : undefined,
       time : undefined,
+      humidity : undefined,
+      windSpeed : undefined,
+      sunrise : undefined,
+      sunset : undefined,
+      chanceOfRain : undefined,
     }
 
     this.getWeather();
@@ -44,7 +52,12 @@ export default class App extends Component {
 
   convertTime(temp)
   {
-    return temp.slice(11,16)
+    return moment(temp).format('LT')
+  }
+
+  convertUnix(temp)
+  {
+    return moment(temp).format('LT'); 
   }
 
   getWeather = async() => {
@@ -55,9 +68,16 @@ export default class App extends Component {
     this.setState({
       city : response.name,
       country: response.sys.country,
-      celcius : this.convertCel(response.main.temp)
+      celcius : this.convertCel(response.main.temp),
+      main : response.weather[0].main,
+      windSpeed : response.wind.speed,
+      humidity : response.main.humidity,
+      minTemp : this.convertCel(response.main.temp_min),
+      maxTemp : this.convertCel(response.main.temp_max),
+      sunrise : this.convertUnix(response.sys.sunrise),
+      sunset : this.convertUnix(response.sys.sunset),
+      chanceOfRain : response.rain["1h"]*100
     })
-
   
 
     console.log(response);
@@ -78,6 +98,9 @@ export default class App extends Component {
     console.log(response);
 
   }
+
+  
+
   render() {
     return (
       <div>
@@ -87,6 +110,15 @@ export default class App extends Component {
           celcius = {this.state.celcius}
           day = {this.state.day}
           time = {this.state.time}
+          main = {this.state.main}
+          humidity = {this.state.humidity}
+          windSpeed = {this.state.windSpeed}
+          maxTemp = {this.state.maxTemp}
+          minTemp ={this.state.minTemp}
+          sunset = {this.state.sunset}
+          sunrise = {this.state.sunrise}
+          chanceOfRain = {this.state.chanceOfRain}
+          
           
           />
       </div>

@@ -1,0 +1,9 @@
+.lgCard {
+  height: 20rem;
+  width: 50rem;
+  background-color: red;
+}
+
+.ver-line {
+  border-left: 1px solid red;
+}

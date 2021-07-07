@@ -7,7 +7,7 @@ import './weather.css'
 
 function weather(props) {
     return (
-      <div className="mx-3 my-3" >
+      <div className="mx-3 " >
           <div className="row">
               <div className="col-md-4 sidebar ">
               <SideBar 
@@ -16,10 +16,20 @@ function weather(props) {
               celcius = {props.celcius}
               day = {props.day}
               time = {props.time}
+              main = {props.main}
+              chance = {props.chanceOfRain}
+             
               />
               </div>
               <div className="col-md-8 mainbar ">
-                <MainBar/>
+                <MainBar
+                humidity = {props.humidity}
+                windSpeed = {props.windSpeed}
+                min = {props.minTemp}
+                max = {props.maxTemp}
+                sunrise = {props.sunrise}
+                sunset = {props.sunset}
+                />
               </div>
             
           </div>
