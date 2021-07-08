@@ -76,7 +76,7 @@ export default class App extends Component {
       maxTemp : this.convertCel(response.main.temp_max),
       sunrise : this.convertUnix(response.sys.sunrise),
       sunset : this.convertUnix(response.sys.sunset),
-      chanceOfRain : response.rain["1h"]*100
+      chanceOfRain : response.clouds.all
     })
   
 
