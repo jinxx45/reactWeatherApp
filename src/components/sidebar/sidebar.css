@@ -1,4 +1,12 @@
 .search-bar {
   border: none;
-  background-color: bisque;
+  width: 300px;
+  border-radius: 30px;
+  padding-left: 20px;
+  height: 2.5rem;
+}
+
+.brand {
+  font-family: "Zen Loop", cursive;
+  font-size: 6rem;
 }

@@ -7,7 +7,7 @@ function basic3Card(props) {
         <div className="_card">
             {/* heading */}
 
-            <h5 className="fs-5 p-3">{props.heading}</h5>
+            <h5 className="fs-5 p-3 text-muted">{props.heading}</h5>
 
             {/* Body */}
             
@@ -15,7 +15,7 @@ function basic3Card(props) {
             
             {/* Footer */}
 
-            <h4 className="p-3">Status</h4>
+            
         </div>
     )
 }

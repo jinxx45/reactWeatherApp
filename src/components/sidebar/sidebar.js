@@ -5,7 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { faCloudRain } from '@fortawesome/free-solid-svg-icons'
 
-import MainLogo from '../../Images/WeatherAppLogo.png'
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+</style>
+
+
 
 function sidebar(props) {
     return (
@@ -20,7 +24,6 @@ function sidebar(props) {
 
             <div className="d-flex align-items-center my-4 flex-column" >
 
-                <img src={MainLogo} height={300} width={300} alt="" />
 
             {/* Degree  */}
 
@@ -41,17 +44,17 @@ function sidebar(props) {
             <hr />
 
             <i className="wi wi-day-sunny display-5 mx-4 my-3"></i>
-            <span>{props.main}</span>
+            <span className="fs-2">{props.main}</span>
 
             {/* Chance of Rain */}
             <br />
 
-            <FontAwesomeIcon className="mx-4 display-6" icon={faCloudRain} />
-            <span>Chance of Rain : {props.chance}%</span>
+            <FontAwesomeIcon className="mx-4 display-6 " icon={faCloudRain} />
+            <span className="fs-2 my-5">Chance of Rain : {props.chance}%</span>
 
             {/* Location */}
 
-            <h3 className="mx-3 my-3">  {props.city} , {props.country} </h3>
+            <h3 className="mx-3 my-5">  {props.city} , {props.country} </h3>
 
             
             
